@@ -1,5 +1,7 @@
 <%- include("./partials/header") %> 
+
 <h1 class="container">Look how people are utilising their free time</h1>
+
 <% for(let post of posts){ %>
     <div class="container item">
         <h2><%= post.title %> </h2>
@@ -10,4 +12,6 @@
         </div>
     </div>
 <% } %> 
+
+<script src="/find.js"></script>
 <%- include("./partials/footer") %>
