@@ -3,3 +3,8 @@ A website on which people can share the productive tasks they are doing during t
 
 
 Built using Nodejs, Express and MongoDB
+
+To start using, 
+-Fork this repository and clone it on your machine.  
+-Run **npm install** to install the dependencies.
+-Go to localhost:3000 on your browser and viola! There you are.
