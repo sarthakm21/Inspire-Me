@@ -9,7 +9,8 @@ app.use(express.static("public"));
 require('dotenv').config();
 stuff=process.env.lolksw;
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb+srv://sarthakm21:"+stuff+"@cluster0-xvsfa.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoURL=process.env.MONGODB_URI || "mongodb+srv://sarthakm21:"+stuff+"@cluster0-xvsfa.mongodb.net/test?retryWrites=true&w=majority";
+mongoose.connect(mongoURL, {useNewUrlParser: true});
 
 var userSchema = new mongoose.Schema({
     email: String,
@@ -124,6 +125,6 @@ app.post("/posts", (req,res)=>{
     });
 });
 
-app.listen(3000, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log("Tuned into port 3000");
 });
