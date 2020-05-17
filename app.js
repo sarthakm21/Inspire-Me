@@ -43,8 +43,14 @@ app.post("/posts", (req,res)=>{
     var title = req.body.posts.title;
     var author = req.body.posts.author;
 
-    if(author==="" && title===""){
+    if(author!=="" && title!==""){
+        post.create(req.body.posts, (err,post)=>{
+        if(err)
         res.redirect("/posts");
+
+        else
+        res.redirect("/posts");
+    });
     }
 
     else if(author===""){
@@ -77,7 +83,7 @@ app.post("/posts", (req,res)=>{
             else{
                 res.render("index", {posts: posts})
             }
-        })
+        });
     }
     
 });
@@ -93,18 +99,16 @@ app.get("/posts/new", (req,res)=>{
 });
 
 //create route
-app.post("/posts", (req,res)=>{
-    post.create(req.body.posts, (err,post)=>{
-        if(err)
-        res.redirect("/posts");
+// app.post("/posts", (req,res)=>{
+//     post.create(req.body.posts, (err,post)=>{
+//         if(err)
+//         res.redirect("/posts");
 
-        else
-        res.redirect("/posts");
-    });
-});
+//         else
+//         res.redirect("/posts");
+//     });
+// });
 
 app.listen(process.env.PORT || 3000, ()=>{
     console.log("Tuned into port 3000");
 });
-
-module.exports=post;
