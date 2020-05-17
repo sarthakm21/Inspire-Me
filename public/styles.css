@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    font-family: Raleway;
+    background-color: #FBEEC1;
+}
+
+h2{
+    margin: 10px 0;
+    font-size: 1.7em;
+}
+
+nav{
+    background-color: black;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+nav a{
+    margin: 0 30px;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover{
+    color: grey;
+}
+
+form{
+    margin-top: 80px;
+}
+
+input{
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    padding: 10px;
+    font-family: Raleway;
+}
+
+textarea{
+    margin: 10px auto;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+    font-family: Raleway;
+}
+
+button{ 
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-family: Raleway;
+}
+
+.item{
+    border: 2px solid grey; 
+    margin-bottom: 20px!important;
+    margin-top: 20px!important;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.container{
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+.data{
+    display: inline-block;
+    padding: 0 10px;
+    margin: 10px 0;
+    font-size: 1.3em;
+}
+
+.content{
+    font-size: 1.1em;
+}
+
