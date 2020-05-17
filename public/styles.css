@@ -68,7 +68,8 @@ button{
 }
 
 .data{
-    display: inline-block;
+    display: inline-flex;
+    justify-content: space-around;
     padding: 0 10px;
     margin: 10px 0;
     font-size: 1.3em;
@@ -78,3 +79,16 @@ button{
     font-size: 1.1em;
 }
 
+.search{
+    width: 30%;
+    display: inline;
+    margin-top: 0;
+}
+
+.search +button{
+    width: 10%;
+}
+
+.searchForm{
+    margin-top: 30px;
+}

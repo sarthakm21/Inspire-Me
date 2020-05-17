@@ -2,6 +2,17 @@
 
 <h1 class="container">Look how people are utilising their free time</h1>
 
+<br><br><br>
+
+<div class="container">
+    <h2>Search Through The Posts</h2>
+    <form action="/posts" method="POST" class="searchForm">
+        <input type="text" class="search" placeholder="Search By Title" name="posts[title]">
+        <input type="text" class="search" placeholder="Search By Author" name="posts[author]">
+        <button class="search">Search</button> 
+    </form>
+</div>
+
 <% for(let post of posts){ %>
     <div class="container item">
         <h2><%= post.title %> </h2>
