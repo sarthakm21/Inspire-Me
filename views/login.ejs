@@ -1,0 +1,12 @@
+<%- include("./partials/header") %> 
+
+<div class="container">
+    <h2>Login or Sign Up</h2>
+    <form action="/login" method="POST">
+        <input type="text" placeholder="Email" name="login[email]">
+        <input type="password" placeholder="Password" name="login[password]">
+        <button>Submit</button>
+    </form>
+</div>
+
+<%- include("./partials/footer") %>

@@ -6,14 +6,18 @@ const app=express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-
+require('dotenv').config();
+stuff=process.env.lolksw;
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb+srv://sarthakm21:VijPri_95@cluster0-xvsfa.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://sarthakm21:"+stuff+"@cluster0-xvsfa.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
 
 var userSchema = new mongoose.Schema({
-    user: String,
+    email: String,
     password: String
 });
+
+var mail="";
+var pwd="";
 
 const user = mongoose.model("user", userSchema);
 
@@ -34,11 +38,21 @@ const post = mongoose.model("post", postSchema);
 
 //home
 app.get("/home", (req,res)=>{
+    
+    // if(mail==="" || pwd ===""){
+    //     res.redirect("/login");
+    // }
+
     res.render("home");
 });
 
 //index route
 app.get("/posts", (req,res)=>{
+    
+    // if(mail==="" || pwd ===""){
+    //     res.redirect("/login");
+    // }
+
     post.find({}, (err,posts)=>{
         if(err)
         console.log(err);
@@ -49,12 +63,53 @@ app.get("/posts", (req,res)=>{
     });
 });
 
-app.get("/", (req,res)=>{
-    res.redirect("/home");
-});
+// app.get("/login", (req,res)=>{
+//     res.render("login");
+// });
+
+// app.post("/login", (req,res)=>{
+//     user.find(req.body.login.email, (err,found)=>{
+//         if(err){
+//             user.create(req.body.login, (err,done)=>{
+//                 if(err)
+//                 res.redirect("/login");
+
+//                 else{
+//                     mail=req.body.login.email;
+//                     pwd=req.body.login.password;
+//                     res.redirect("/home");
+//                 }
+                
+//             });
+//         }
+
+//         else{
+//             user.find(req.body.login, (err,foundAll)=>{
+//                 if(err)
+//                 alert("Wrong Password!");
+
+//                 else{
+//                     mail=req.body.login.email;
+//                     pwd=req.body.login.password;
+//                     res.redirect("/home");
+//                 }
+//             });
+            
+//         }
+//     });
+// });
+
+// app.get("/", (req,res)=>{
+//     res.redirect("/login");
+// });
 
 //new route
 app.get("/posts/new", (req,res)=>{
+    
+    // if(mail==="" || pwd ===""){
+    //     res.redirect("/login");
+    // }   
+
     res.render("new");
 });
 
@@ -69,7 +124,6 @@ app.post("/posts", (req,res)=>{
     });
 });
 
-
 app.listen(3000, ()=>{
     console.log("Tuned into port 3000");
-})
+});
