@@ -11,7 +11,7 @@ A website on which people can share the productive tasks they are doing during t
 
 - Clone the repo from https://github.com/sarthakm21/sarthakm21-SGR-2.git by running **git clone https://github.com/sarthakm21/sarthakm21-SGR-2.git** in the terminal
 - cd inside the folder sarthakm21-SGR-2 and run **npm install**
-- Install MongoDB if not already installed.
+- Install MongoDB if not already installed from the link https://www.mongodb.com/download-center/community?tck=docs_server.
 - run **npm start**
 - Navigate to **localhost:3000** on your browser.
 
